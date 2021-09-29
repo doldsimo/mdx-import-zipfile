@@ -1,0 +1,28 @@
+.video-js {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 700px;
+}
+
+@media (min-width: 100px) {
+    .video-js {
+        max-height: 175px;
+    }
+}
+@media (min-width: 768px) {
+    .video-js {
+        max-height: 250px;
+    }
+}
+@media (min-width: 992px) {
+    .video-js {
+        max-height: 350px;
+    }
+}
+@media (min-width: 1200px) {
+    .video-js {
+        max-height: 500px;
+    }
+}
