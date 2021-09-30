@@ -53,6 +53,7 @@ const renderWithReact = async (mdxCode) => {
         Image: ({ data }) => <Image data={data} />,
         YoutubeVideo: ({ url }) => <YoutubeVideo url={url} />,
         Quiz: ({ quiz }) => <Quiz quiz={quiz} />,
+        CustomComponent: ({type}) => <div>{type}</div>,
         wrapper: Wrapper,
     }
 
@@ -65,6 +66,3 @@ const renderWithReact = async (mdxCode) => {
 }
 
 export default renderWithReact;
-
-
-

@@ -5,12 +5,12 @@
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@mdx-js/loader": "^1.6.22",
-    "@mdx-js/runtime": "^1.6.22",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@zip.js/zip.js": "^2.3.15",
     "babel-loader": "8.1.0",
+    "mdx-scoped-runtime": "^0.7.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-quiz-component": "^0.3.8",

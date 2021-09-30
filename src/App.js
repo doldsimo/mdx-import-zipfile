@@ -1,6 +1,5 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import { MDXProvider } from "@mdx-js/react";
-import MDX from '@mdx-js/runtime'
 import { useState } from "react";
 
 
@@ -13,8 +12,11 @@ import Quiz from 'react-quiz-component';
 
 import { mdx } from './exampleMDX';
 
+import RenderJsonData from './Components/RenderJsonData/RenderJsonData';
+
 function App() {
   const [content, setContent] = useState(null);
+  const [jsonData, setJsonData] = useState([]);
 
   const components = {
     h1: props => <h1 style={{ color: "tomato" }} {...props} />,
@@ -33,10 +35,13 @@ function App() {
     <div>
       <h1>Lern App</h1>
       <p>Importiere eine Lerneinheit</p>
-      <Reader setContent={setContent} />
+      <Reader setContent={setContent} setJsonData={setJsonData} />
       <div id="renderJSX"></div>
+      <div>
+        {jsonData.map(data => RenderJsonData(data))}
+      </div>
       {/* <MDXProvider> */}
-      <MDX components={components}>{content}</MDX>
+      {/* <MDX components={components}>{content}</MDX> */}
       {/* </MDXProvider> */}
     </div>
   );
