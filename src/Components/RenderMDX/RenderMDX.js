@@ -46,14 +46,11 @@ const renderWithReact = async (mdxCode) => {
     const element = fn(React, ...Object.values(scope))
     const components = {
         h1: props => <h1 style={{color: "blue"}} {...props}/>,
-        Demo: props => <RemoteComponent url={urltest} {...props}/>,
-        DemoTwo: () => <h1 style={{ color: "red" }}>This is a demo component Two</h1>,
-        TestComponent: ({ test }) => <p>TestComponent {test}</p>,
         Mp4Video: props => <RemoteComponent url={urlMp4Video} {...props}/>, 
         Image: props => <RemoteComponent url={urlImage} {...props}/>,
         YoutubeVideo: props => <YoutubeVideo {...props}/>, // Youtube Video in kombination mit RemoteComponent gibt CORS Fehler aus, deswegen wird bei Youtube Videos keine RemoteComponent verwendet
         Quiz: props => <RemoteComponent url={urlQuizComponent} {...props}/>,
-        CustomComponent: ({url, type}) => <RemoteComponent url={url} type={type}/>, // Beliebige Komponente bei welcher man die URL mitgiebt, sodass man angeben kann welche Komponente man aus dem "Store" benutzen möchte, der type wird als Klasse gesetzt
+        CustomComponent: props => <RemoteComponent {...props}/>, // Beliebige Komponente bei welcher man die URL mitgiebt, sodass man angeben kann welche Komponente man aus dem "Store" benutzen möchte, der type wird als Klasse gesetzt
         wrapper: Wrapper,
     } 
 
