@@ -28,8 +28,8 @@ const Reader = ({ setContent, setJsonData }) => {
                 );
                 // setContent(text);
 
-                let data = await renderWithReact(text);
-                setContent(data);
+                let data = await renderWithReact(text, setContent);
+                // setContent(data);
             }
             // Read Which components are needed
             if (entries[i].filename === "usedComponents.json") {
