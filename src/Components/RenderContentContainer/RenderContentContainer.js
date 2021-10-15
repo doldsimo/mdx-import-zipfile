@@ -1,26 +1,9 @@
 import React, { useEffect } from 'react';
 import { SandpackRunner } from "@codesandbox/sandpack-react";
 
-const RenderContentContainer = ({content}) => {
+const RenderContentContainer = () => {
 
-    useEffect(() => {
-
-    }, [])
-
-    return (<><div id="renderJSX"></div> <SandpackRunner code={`function App() {
-        
-        return (
-          <div>
-            <h1>Lern App</h1>
-            <p>Importiere eine Lerneinheit</p>
-            {console.log(window.localStorage)}
-          </div>
-        );
-      }
-      
-      export default App;`
-    
-    } template="react" /></>);
+    return (<div id="renderJSX"></div>);
 }
 
-export default RenderContentContainer
+export default RenderContentContainer;
