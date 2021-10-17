@@ -14,6 +14,7 @@ import YoutubeVideo from '../Video/YoutubeVideo/YoutubeVideo';
 import { RemoteComponent } from '../RemoteComponent/RemoteComponent';
 import { urltest, urlImage, urlMp4Video, urlQuizComponent, urlYoutubeVideo } from '../../RemoteComponentsURL';
 import Spinner from '../Spinner/Spinner';
+import LoadingFailed from '../LoadingFailed/LoadingFailed';
 
 const transformJSX = code =>
     transform(code, {
@@ -47,7 +48,7 @@ const renderWithReact = async (mdxCode, setContent) => {
     // console.log(jsx);
     // console.log(code);
     // console.log(typeof(code));
-    
+
 
     const fn = new Function(
         'React',
@@ -58,11 +59,11 @@ const renderWithReact = async (mdxCode, setContent) => {
     const element = fn(React, ...Object.values(scope))
     const components = {
         h1: props => <h1 style={{ color: "blue" }} {...props} />,
-        Mp4Video: props => <RemoteComponent url={urlMp4Video} {...props} fallback={<Spinner/>} render={() =><div>Kann nicht geladen werden</div>} />,
-        Image: props => <RemoteComponent url={urlImage} {...props} fallback={<Spinner/>} render={() =><div>Kann nicht geladen werden</div>} />,
+        Mp4Video: props => <RemoteComponent url={urlMp4Video}  fallback={<Spinner />} render={(err, Component)=>  err ? <LoadingFailed name="MP4 Video"/> : <Component {...props} />} />,
+        Image: props => <RemoteComponent url={urlImage}  fallback={<Spinner />} render={(err, Component)=>  err ? <LoadingFailed name="Bild"/> : <Component {...props} />} />,
         YoutubeVideo: props => <YoutubeVideo {...props} />, // Youtube Video in kombination mit RemoteComponent gibt CORS Fehler aus, deswegen wird bei Youtube Videos keine RemoteComponent verwendet
-        Quiz: props => <RemoteComponent url={urlQuizComponent} {...props} fallback={<Spinner/>} render={() =><div>Kann nicht geladen werden</div>} />,
-        CustomComponent: props => <RemoteComponent {...props} fallback={<Spinner/>} render={() =><div>Kann nicht geladen werden</div>} />, // Beliebige Komponente bei welcher man die URL mitgiebt, sodass man angeben kann welche Komponente man aus dem "Store" benutzen möchte, der type wird als Klasse gesetzt
+        Quiz: props => <RemoteComponent url={urlQuizComponent} fallback={<Spinner />} render={(err, Component)=>  err ? <LoadingFailed name="Quiz"/> : <Component {...props} />}/>,
+        CustomComponent: props => <RemoteComponent fallback={<Spinner />} render={(err, Component)=>  err ? <LoadingFailed name="Benutzerdefiniertekomponente"/> : <Component {...props} />}/>, // Beliebige Komponente bei welcher man die URL mitgiebt, sodass man angeben kann welche Komponente man aus dem "Store" benutzen möchte, der type wird als Klasse gesetzt
         wrapper: Wrapper,
     }
 
