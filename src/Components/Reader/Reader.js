@@ -1,7 +1,9 @@
 import React from 'react';
 import renderWithReact from '../RenderMDX/RenderMDX';
+import { useHistory } from 'react-router';
 
 const Reader = ({ setContent, setJsonData }) => {
+    const history = useHistory();
 
     const handleReadZipFile = async (e) => {
         // console.log(e.target.files[0]);
@@ -28,11 +30,14 @@ const Reader = ({ setContent, setJsonData }) => {
                 );
                 // setContent(text);
 
+                // Push to new page must be before render, so that targeted container exists
+                history.push("/page1");
                 let data = await renderWithReact(text, setContent);
                 // setContent(data);
+
             }
             // Read Which components are needed
-            if (entries[i].filename === "usedComponents.json") {
+            if (entries[i].filename === "config.json") {
                 const text = await entries[i].getData(
                     // writer
                     new window.zip.TextWriter(),
@@ -43,7 +48,6 @@ const Reader = ({ setContent, setJsonData }) => {
                         }
                     }
                 );
-                console.log("Text");
                 console.log(JSON.parse(text));
                 setJsonData(JSON.parse(text))
             }
