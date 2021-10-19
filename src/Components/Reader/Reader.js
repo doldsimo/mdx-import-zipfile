@@ -65,7 +65,7 @@ const Reader = ({ setContent, setJsonData }) => {
 
 
     return (
-        <div>
+        <div className="center-import-lecture-text">
             <input type="file" onChange={handleReadZipFile} />
         </div>
     )
