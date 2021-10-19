@@ -1,6 +1,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import { MDXProvider } from "@mdx-js/react";
 import { useEffect, useState } from "react";
+import './app.css';
 
 import renderWithReact from "./Components/RenderMDX/RenderMDX";
 import YoutubeVideo from "./Components/Video/YoutubeVideo/YoutubeVideo";
