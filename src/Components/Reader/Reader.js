@@ -2,12 +2,15 @@ import React from 'react';
 import renderWithReact from '../RenderMDX/RenderMDX';
 import { useHistory } from 'react-router';
 
-const Reader = ({ setContent, setJsonData }) => {
+const Reader = ({ setContent, setConfigData }) => {
     const history = useHistory();
 
     const handleReadZipFile = async (e) => {
         // console.log(e.target.files[0]);
 
+
+        let pages = [];
+        let content = [];
 
         // create a BlobReader to read with a ZipReader the zip from a Blob object
         const reader = new window.zip.ZipReader(new window.zip.BlobReader(e.target.files[0]));
@@ -17,26 +20,7 @@ const Reader = ({ setContent, setJsonData }) => {
 
         console.log("entries: ", entries);
         for (let i = 0; i < entries.length; i++) {
-            if (entries[i].filename === "Content.mdx") {
-                const text = await entries[i].getData(
-                    // writer
-                    new window.zip.TextWriter(),
-                    // options
-                    {
-                        onprogress: (index, max) => {
-                            // onprogress callback
-                        }
-                    }
-                );
-                // setContent(text);
-
-                // Push to new page must be before render, so that targeted container exists
-                history.push("/page1");
-                let data = await renderWithReact(text, setContent);
-                // setContent(data);
-
-            }
-            // Read Which components are needed
+            // Read the config of the lecture
             if (entries[i].filename === "config.json") {
                 const text = await entries[i].getData(
                     // writer
@@ -48,19 +32,41 @@ const Reader = ({ setContent, setJsonData }) => {
                         }
                     }
                 );
-                console.log(JSON.parse(text));
-                setJsonData(JSON.parse(text))
+
+                let jsonText = JSON.parse(text);
+                console.log(jsonText);
+                setConfigData(jsonText);
+                pages = jsonText.pages;
             }
 
-            // if (entries.length) {
-            // get first entry content as text by using a TextWriter
-            // text contains the entry data as a String
-            // console.log(text);
-
+            // debugger;
+            if (entries[i].filename.startsWith("pages/")) {
+                console.log(entries[i].filename);
+                const text = await entries[i].getData(
+                    // writer
+                    new window.zip.TextWriter(),
+                    // options
+                    {
+                        onprogress: (index, max) => {
+                            // onprogress callback
+                        }
+                    }
+                );
+                console.log(entries[i].filename);
+                console.log(text);
+                content.push(text);
+            }
         }
 
         // close the ZipReader
         await reader.close();
+
+        console.log(pages);
+        console.log("Content: ", content);
+        // Push to new page must be before render, so that targeted container exists
+        history.push("page/" + pages[0].name);
+        let data = await renderWithReact(content[0], setContent);
+
     }
 
 

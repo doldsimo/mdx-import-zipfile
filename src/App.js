@@ -19,18 +19,17 @@ import Layout from "./Components/Layout/Layout";
 
 function App() {
   const [content, setContent] = useState(null);
-  const [jsonData, setJsonData] = useState([]);
-  const [page, setPage] = useState(null)
+  const [configData, setConfigData] = useState({});
+  const [page, setPage] = useState(null);
 
   return (
     <div>
-
       <Switch>
         <Route exact path="/">
-          <ImportLecture content={content} setContent={setContent} setJsonData={setJsonData} />
+          <ImportLecture content={content} setContent={setContent} setConfigData={setConfigData} />
         </Route>
-        <Layout>
-          <Route exact path="/page1">
+        <Layout configData={configData}>
+          <Route exact path="/page/:name">
             <PageOne content={content}/>
           </Route>
           <Route exact path="/page2">

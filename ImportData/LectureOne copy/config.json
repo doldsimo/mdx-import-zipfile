@@ -1,0 +1,9 @@
+{
+    "subject": "Mathematik",
+    "topic": "Addition",
+    "pages": [
+        {"name": "Quiz"},
+        {"name": "Information"},
+        {"name": "Video"}
+    ]
+}
