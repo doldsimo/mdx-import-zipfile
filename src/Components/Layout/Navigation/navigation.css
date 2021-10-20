@@ -1,0 +1,40 @@
+.navigation-container {
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.side-menue {
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: #f3f3f3;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3 ease-out;
+}
+
+.side-menue-open {
+    transform: translateX(0);
+    transition: 0.2s ease-in-out;
+}
+
+.side-menue-close {
+    transform: translateX(-100%);
+    transition: 0.2s ease-in-out;
+}
+
+.menue-icon {
+    float: right;
+    cursor: pointer;
+}

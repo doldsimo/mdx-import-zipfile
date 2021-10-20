@@ -1,0 +1,26 @@
+.navigation-item {
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+.navigation-item a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    transition: 0.2s ease-in-out;
+}
+
+.navigation-item a:hover {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+.navigation-item a.active {
+    color: black;
+    border-left: 4px solid #40a4c8;
+    padding-left: 7px;
+    text-decoration: none;
+}
