@@ -15,6 +15,7 @@ import PageTwo from "./pages/PageTwo";
 import PageThree from "./pages/PageThree";
 import ImportLecture from "./pages/ImportLecture";
 import Layout from "./Components/Layout/Layout";
+import LectureInformation from "./pages/LectureInformation";
 
 
 function App() {
@@ -29,11 +30,11 @@ function App() {
           <ImportLecture content={content} setContent={setContent} setConfigData={setConfigData} />
         </Route>
         <Layout configData={configData}>
-          <Route exact path="/page/:name">
-            <PageOne content={content}/>
+          <Route exact path="/lecture/information">
+            <LectureInformation configData={configData} />
           </Route>
-          <Route exact path="/page2">
-            <PageTwo />
+          <Route exact path="/lecture/page/:name">
+            <PageOne content={content}/>
           </Route>
           <Route exact path="/page3">
             <PageThree />
