@@ -17,6 +17,7 @@
 .navigation-item a:hover {
     text-decoration: none;
     transition: 0.2s ease-in-out;
+    color: rgb(20, 20, 20);
 }
 .navigation-item a.active {
     color: black;

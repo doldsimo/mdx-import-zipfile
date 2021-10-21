@@ -11,4 +11,4 @@ const NavigationItems = ({ configData, setShowMenue }) => {
     )
 }
 
-export default NavigationItems
+export default NavigationItems;
