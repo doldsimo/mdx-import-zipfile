@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import "./navigation.css";
 import NavigationItems from './NavigationItems/NavigationItems';
 
-const Navigation = ({ configData, showMenue, setShowMenue }) => {
+const Navigation = ({ showMenue, setShowMenue }) => {
     return (
         <>
             {/* For grey background if menue is open */}
@@ -20,7 +20,7 @@ const Navigation = ({ configData, showMenue, setShowMenue }) => {
                 </div>
 
                 <nav>
-                    <NavigationItems configData={configData} setShowMenue={setShowMenue}/>
+                    <NavigationItems setShowMenue={setShowMenue}/>
                 </nav>
 
             </div>

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import renderWithReact from '../Components/RenderMDX/RenderMDX';
 import { useHistory } from 'react-router';
-import { StepContent } from '@material-ui/core';
+import { LectureContext } from '../context/LectureContext';
 
-const LectureContent = ({ content, setContent, pageIndex, setPageIndex, configData }) => {
+const LectureContent = () => {
+    const { content, setContent, pageIndex, setPageIndex, configData } = useContext(LectureContext);
     const history = useHistory();
 
     useEffect(() => {

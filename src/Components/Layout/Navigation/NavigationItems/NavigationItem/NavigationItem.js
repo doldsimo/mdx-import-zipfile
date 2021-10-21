@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { LectureContext } from '../../../../../context/LectureContext';
+import { useHistory } from 'react-router';
 
 import './navigationItem.css';
 
 const NavigationItem = (props) => {
+    const { setContent, setPageIndex } = useContext(LectureContext);
+    const history = useHistory();
 
     const exitLecture = () => {
         history.push("/");

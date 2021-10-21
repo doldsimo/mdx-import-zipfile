@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./lectureInformation.css";
 
 import { useHistory } from 'react-router';
+import { LectureContext } from '../context/LectureContext';
 
-const LectureInformation = ({ configData }) => {
+const LectureInformation = () => {
+    const { configData } = useContext(LectureContext);
     const history = useHistory();
 
 

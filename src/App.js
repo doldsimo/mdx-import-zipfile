@@ -30,12 +30,12 @@ function App() {
         <Route exact path="/">
           <ImportLecture content={content} setContent={setContent} setConfigData={setConfigData} />
         </Route>
-        <Layout configData={configData}>
+        <Layout>
           <Route exact path="/lecture/information">
-            <LectureInformation configData={configData} />
+            <LectureInformation />
           </Route>
           <Route exact path="/lecture/page/:name">
-            <LectureContent content={content} setContent={setContent} pageIndex={pageIndex} setPageIndex={setPageIndex} configData={configData} />
+            <LectureContent />
           </Route>
           <Route exact path="/page3">
             <PageThree />

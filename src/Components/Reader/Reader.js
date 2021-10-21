@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import renderWithReact from '../RenderMDX/RenderMDX';
 import { useHistory } from 'react-router';
 
-const Reader = ({ setContent, setConfigData }) => {
+import { LectureContext } from '../../context/LectureContext';
+
+const Reader = () => {
+    const { setContent, setConfigData } = useContext(LectureContext);
     const history = useHistory();
 
     const handleReadZipFile = async (e) => {
