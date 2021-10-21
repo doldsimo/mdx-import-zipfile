@@ -15,6 +15,10 @@ const NavigationItem = (props) => {
         setContent(null);
     }
 
+    const setPageIndexOnClick = () => {
+        setPageIndex(props.pageIndex);
+    }
+
     if (props.exit) {
         return (
             <div className="navigation-item" onClick={exitLecture}>
@@ -27,7 +31,7 @@ const NavigationItem = (props) => {
         )
     }
     return (
-        <div className="navigation-item">
+        <div className="navigation-item" onClick={setPageIndexOnClick}>
             <NavLink
                 to={props.link}
                 activeClassName="active"

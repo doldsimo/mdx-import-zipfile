@@ -10,8 +10,6 @@ const Reader = () => {
 
     const handleReadZipFile = async (e) => {
         // console.log(e.target.files[0]);
-
-
         let pages = [];
         let content = [];
 
