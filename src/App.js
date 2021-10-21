@@ -16,12 +16,13 @@ import PageThree from "./pages/PageThree";
 import ImportLecture from "./pages/ImportLecture";
 import Layout from "./Components/Layout/Layout";
 import LectureInformation from "./pages/LectureInformation";
+import LectureContent from "./pages/LectureContent";
 
 
 function App() {
   const [content, setContent] = useState(null);
   const [configData, setConfigData] = useState({});
-  const [page, setPage] = useState(null);
+  const [pageIndex, setPageIndex] = useState(0)
 
   return (
     <div>
@@ -34,7 +35,7 @@ function App() {
             <LectureInformation configData={configData} />
           </Route>
           <Route exact path="/lecture/page/:name">
-            <PageOne content={content}/>
+            <LectureContent content={content} setContent={setContent} pageIndex={pageIndex} setPageIndex={setPageIndex} configData={configData} />
           </Route>
           <Route exact path="/page3">
             <PageThree />

@@ -34,12 +34,12 @@ const Reader = ({ setContent, setConfigData }) => {
                 );
 
                 let jsonText = JSON.parse(text);
-                console.log(jsonText);
+                // console.log(jsonText);
                 setConfigData(jsonText);
                 pages = jsonText.pages;
             }
 
-            // debugger;
+            // Addes all content pages to content array
             if (entries[i].filename.startsWith("pages/")) {
                 console.log(entries[i].filename);
                 const text = await entries[i].getData(
@@ -52,8 +52,8 @@ const Reader = ({ setContent, setConfigData }) => {
                         }
                     }
                 );
-                console.log(entries[i].filename);
-                console.log(text);
+                // console.log(entries[i].filename);
+                // console.log(text);
                 content.push(text);
             }
         }
@@ -61,10 +61,13 @@ const Reader = ({ setContent, setConfigData }) => {
         // close the ZipReader
         await reader.close();
 
-        console.log(pages);
+        // console.log(pages);
         console.log("Content: ", content);
+        // To set content in App-Component, so the app know about the content
+        setContent(content);
         // Push to new page must be before render, so that targeted container exists
-        history.push("/lecture/information");
+        console.log(pages);
+        history.push("/lecture/" + pages[0].name);
         // let data = await renderWithReact(content[0], setContent);
 
     }
