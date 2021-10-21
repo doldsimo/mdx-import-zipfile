@@ -9,7 +9,7 @@ const LectureContent = ({ content, setContent, pageIndex, setPageIndex, configDa
     useEffect(() => {
         console.log(content);
         async function asyncRender() {
-            let data = await renderWithReact(content[pageIndex]);
+            await renderWithReact(content[pageIndex]);
         }
         asyncRender();
     }, [pageIndex]);
