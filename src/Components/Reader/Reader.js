@@ -67,7 +67,7 @@ const Reader = ({ setContent, setConfigData }) => {
         setContent(content);
         // Push to new page must be before render, so that targeted container exists
         console.log(pages);
-        history.push("/lecture/" + pages[0].name);
+        history.push("/lecture/information");
         // let data = await renderWithReact(content[0], setContent);
 
     }

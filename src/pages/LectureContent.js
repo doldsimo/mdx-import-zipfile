@@ -33,6 +33,7 @@ const LectureContent = ({ content, setContent, pageIndex, setPageIndex, configDa
 
     return (
         <>
+            {/* container for rendering the lecture */}
             <div id="renderJSX"></div>
             {/* Footer navigation */}
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
