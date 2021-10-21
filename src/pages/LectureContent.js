@@ -33,15 +33,12 @@ const LectureContent = ({ content, setContent, pageIndex, setPageIndex, configDa
 
     return (
         <>
-            {console.log(pageIndex)}
-            {console.log(configData.pages.length - 1)}
             <div id="renderJSX"></div>
+            {/* Footer navigation */}
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 {pageIndex > 0 ? <button onClick={previousPage}>Zurück</button> : <div />}
                 {pageIndex < configData.pages.length - 1 ? <button onClick={nextPage}>Nächste Seite</button> : pageIndex == configData.pages.length - 1 ? <button onClick={exitLecture}>Lerneinheit beenden</button> : <div />}
             </div>
-            {/* {pageIndex < configData.pages.length-1 ? <button onClick={nextPage}>Lerneinheit beenden</button> : <div />} */}
-
         </>
     )
 }
