@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import renderWithReact from '../RenderMDX/RenderMDX';
 import { useHistory } from 'react-router';
 
 import { LectureContext } from '../../context/LectureContext';

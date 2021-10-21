@@ -3,7 +3,7 @@
     "topic": "Addition",
     "pages": [
         {"name": "Information"},
-        {"name": "Video"},
-        {"name": "Quiz"}
+        {"name": "Quiz"},
+        {"name": "Video"}
     ]
 }

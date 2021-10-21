@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import Backdrop from './Backdrop/Backdrop';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -24,16 +23,6 @@ const Navigation = ({ showMenue, setShowMenue }) => {
                 </nav>
 
             </div>
-
-            {/* <div className="navigation-container">
-                <div>
-                    <Link to="/">Lerneinheit beenden</Link>
-                </div>
-                <div>
-                    {configData.pages.map((page, index) => <><Link to={"/lecture/page/" + page.name}>{index + 1 + ". " + page.name}</Link> </>)}
-                </div>
-
-            </div> */}
         </>
     )
 }
