@@ -1,0 +1,11 @@
+{
+    "subject": "Mathematik",
+    "topic": "Addition und Subtraktion",
+    "pages": [
+        {"name": "Erklärung"},
+        {"name": "Bilder"},
+        {"name": "Videos"},
+        {"name": "Quiz Addition"},
+        {"name": "Quiz Subtraktion"}
+    ]
+}
