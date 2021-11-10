@@ -58,7 +58,13 @@ const renderWithReact = async (mdxCode, setContent) => {
 
     const element = fn(React, ...Object.values(scope))
     const components = {
-        h1: props => <h1 style={{ color: "blue" }} {...props} />,
+        h1: props => <h1 {...props} />,
+        h2: props => <h2 {...props} />,
+        h3: props => <h3 {...props} />,
+        h4: props => <h4 {...props} />,
+        h5: props => <h5 {...props} />,
+        h6: props => <h6 {...props} />,
+        p: props => <p {...props} />,
         Mp4Video: props => <RemoteComponent url={urlMp4Video} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="MP4 Video" /> : <Component {...props} />} />,
         Image: props => <RemoteComponent url={urlImage} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="Bild" /> : <Component {...props} />} />,
         YoutubeVideo: props => <YoutubeVideo {...props} />, // Youtube Video in kombination mit RemoteComponent gibt CORS Fehler aus, deswegen wird bei Youtube Videos keine RemoteComponent verwendet
