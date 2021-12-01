@@ -18,7 +18,7 @@ const Reader = () => {
         // get all entries from the zip
         const entries = await reader.getEntries();
 
-        console.log("entries: ", entries);
+        // console.log("entries: ", entries);
         for (let i = 0; i < entries.length; i++) {
             // Read the config of the lecture
             if (entries[i].filename === "config.json") {
@@ -41,7 +41,7 @@ const Reader = () => {
 
             // Addes all content pages to content array
             if (entries[i].filename.startsWith("pages/")) {
-                console.log(entries[i].filename);
+                // console.log(entries[i].filename);
                 const text = await entries[i].getData(
                     // writer
                     new window.zip.TextWriter(),
@@ -62,11 +62,11 @@ const Reader = () => {
         await reader.close();
 
         // console.log(pages);
-        console.log("Content: ", content);
+        // console.log("Content: ", content);
         // To set content in App-Component, so the app know about the content
         setContent(content);
         // Push to new page must be before render, so that targeted container exists
-        console.log(pages);
+        // console.log(pages);
         history.push("/lecture/information");
         // let data = await renderWithReact(content[0], setContent);
 

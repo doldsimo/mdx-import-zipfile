@@ -8,7 +8,7 @@ const LectureContent = () => {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(content);
+        // console.log(content);
         async function asyncRender() {
             await renderWithReact(content[pageIndex]);
         }
@@ -16,7 +16,7 @@ const LectureContent = () => {
     }, [pageIndex]);
 
     const nextPage = () => {
-        console.log(configData);
+        // console.log(configData);
         history.push("/lecture/page/" + configData.pages[pageIndex + 1].name);
         setPageIndex(pageIndex + 1);
     }
