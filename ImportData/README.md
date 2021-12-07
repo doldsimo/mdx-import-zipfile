@@ -1,4 +1,11 @@
-# Komponenten welche in einer Lerneinheit genutzt werden können
+# Beispiel Lerneinheiten
+
+Jeder Ordner steht für eine Lerneinheit. Da in die Lernanwendung Zip Dateien importiert werden müssen, findet sich diese Zip Datei in den jeweiligen Ordner.
+Zum ausprobieren muss diese Zip Datei in die [lesende Anwendung](https://lern-app-data-transfer-mdx.netlify.app/) impotiert werden.
+
+
+
+## Komponenten welche in einer Lerneinheit genutzt werden können
 
 >Grundsätzlich kann die gesammte Syntax von reinem Markdown und reinem JSX verwendet werden.
 >Werden besondere E-Learning Komponeten gebraucht müssen sich diese direkt in der React App befinden, oder im  [Komponeten Store](https://github.com/doldsimo/react-remote-learning-components) hinterlegt sein.
