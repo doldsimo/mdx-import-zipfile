@@ -8,6 +8,7 @@ Zum ausprobieren muss diese Zip Datei in die [lesende Anwendung](https://lern-ap
 ## Komponenten welche in einer Lerneinheit genutzt werden können
 
 >Grundsätzlich kann die gesammte Syntax von reinem Markdown und reinem JSX verwendet werden.
+
 >Werden besondere E-Learning Komponeten gebraucht müssen sich diese direkt in der React App befinden, oder im  [Komponeten Store](https://github.com/doldsimo/react-remote-learning-components) hinterlegt sein.
 
 ## Text
