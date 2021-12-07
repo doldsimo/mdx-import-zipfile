@@ -1,2 +1,2 @@
-# MDX Basierte E-Learning Anwendung
+# MDX basierte E-Learning Anwendung
 
