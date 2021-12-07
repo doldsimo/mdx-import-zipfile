@@ -4,7 +4,7 @@ Anwendung testen: [Demo](https://lern-app-data-transfer-mdx.netlify.app/)
 
 Lesende Anwendung welche den Datenaustausch mit hilfe von MDX an einem Lerntool erprobt.
 
-Weiterführende Links:
+### Weiterführende Links:
 
 [Beispiel Editoren Output](https://github.com/doldsimo/mdx-import-zipfile/tree/dev/ImportData)
 
