@@ -2,7 +2,7 @@
 
 ## Get Started
 
-- Online: [Demo](https://lern-app-data-transfer-mdx.netlify.app/)
+- [Online demo](https://lern-app-data-transfer-mdx.netlify.app/)
 
 - For local execution: <br>
 > Nodejs must be installed to install node modules
@@ -19,7 +19,7 @@
 
 ## How it works
 
-After starting the application with the [online demo](https://lern-app-data-transfer-mdx.netlify.app/) or the local instance, a previously locally downloaded zip learning unit must be uploaded to the app on the start page. A sample lesson can be downloaded directly from the application home page, or found in [this](https://github.com/doldsimo/mdx-import-zipfile/tree/dev/ImportData) folder.
+After starting the application with the [online demo](https://lern-app-data-transfer-mdx.netlify.app/) or a local instance, a previously locally downloaded zip learning unit must be uploaded to the app on the start page. A sample lesson can be downloaded directly from the application home page, or found in [this](https://github.com/doldsimo/mdx-import-zipfile/tree/dev/ImportData) folder.
 After importing the application, the lesson starts automatically.
 
 

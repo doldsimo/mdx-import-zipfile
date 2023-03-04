@@ -1,55 +1,82 @@
-# Beispiel Lerneinheiten
+# Example learning units
 
-Jeder Ordner steht für eine Lerneinheit. Da in die Lernanwendung Zip Dateien importiert werden müssen, findet sich diese Zip Datei in den jeweiligen Ordner.
-Zum ausprobieren muss diese Zip Datei in die [lesende Anwendung](https://lern-app-data-transfer-mdx.netlify.app/) impotiert werden.
+Each folder represents a lesson. Since zip files have to be imported into the reading application, this zip file can be found in the respective folder.
+
+For example try to import one of this zip learning units:
+
+- `BlueprintLesson/BlueprintLesson.zip`
+- `EnglishVocabulary/EnglishVocabulary.zip`
+- `MathAdditionSubtraction/MathAdditionSubtraction.zip`
+
+Try it out in the [reading application](https://lern-app-data-transfer-mdx.netlify.app/).
 
 
+## How are learning units structured/built up?
 
-## Komponenten welche in einer Lerneinheit genutzt werden können
+A learning unit must be structured as follows:
+```
+ExampleLesson
+└───pages
+│   │   0_Page1.mdx
+│   │   1_Page2.mdx
+│   │   2_Page3.mdx
+│   │   ...
+│   │   n_PageN.mdx
+│   
+└───config.json 
+```
+In the MDX files, the respective page content is within the ./pages folder. The config.js is responsible for metadata about the learning unit.
+If a learning unit is integrated into the reading application in this form, the reading application can display this unit correctly.
 
->Grundsätzlich kann die gesammte Syntax von reinem Markdown und reinem JSX verwendet werden.
+In order to create your own suitable learning unit, any example learning unit can be copied and adapted as desired.
 
->Werden besondere E-Learning Komponeten gebraucht müssen sich diese direkt in der React App befinden, oder im  [Komponeten Store](https://github.com/doldsimo/react-remote-learning-components) hinterlegt sein.
+## Components that can be used in a learning unit
+
+>In principle, the entire syntax of pure Markdown and pure JSX can be used.
+
+>If special e-learning components are needed, they must be located directly in the React app or stored in the [component store](https://github.com/doldsimo/react-remote-learning-components).
 
 ## Text
 
-Überschrift 1:
+Heading 1:
 
-`<h1>Überschrift</h1>`
+`<h1>Heading</h1>`
 
-`# Überschrift`
+`# Heading`
 
-Überschrift 2:
+Heading 2:
 
-`<h2>Überschrift</h2>`
+`<h2>Heading</h2>`
 
-`## Überschrift`
+`## Heading`
 
-Überschrift 3:
+Heading 3:
 
-`<h3>Überschrift</h3>`
+`<h3>Heading</h3>`
 
-`### Überschrift`
+`### Heading`
 
-Überschrift 4:
+Heading 4:
 
-`<h4>Überschrift</h4>`
+`<h4>Heading</h4>`
 
-`#### Überschrift`
+`#### Heading`
 
-Überschrift 5:
+Heading 5:
 
-`<h5>Überschrift</h5>`
+`<h5>Heading</h5>`
 
-`##### Überschrift`
+`##### Heading`
 
-Überschrift 6:
+Heading 6:
 
-`<h6>Überschrift</h6>`
+`<h6>Heading</h6>`
 
-`###### Überschrift`
+`###### Heading`
 
-## Bild
+> For more markdown informations read [this](https://www.markdownguide.org/basic-syntax/) article.
+
+## Image
 
 `<Image data="exampleURL"/>`
 
@@ -61,11 +88,11 @@ Zum ausprobieren muss diese Zip Datei in die [lesende Anwendung](https://lern-ap
 
 ## Quiz
 
-`Quiz quiz={quizDataObjekt}/>`
+`Quiz quiz={quizDataObject}/>`
 
->*Quiz baut auf [react-quiz-component](https://github.com/wingkwong/react-quiz-component) auf. Um ein quizDataObjekt Objekt zu erstellen nutze: [Quiz Editor](https://wingkwong.github.io/react-quiz-form/). Hier zum [Editor Code](https://wingkwong.github.io/react-quiz-form/).*
+>*Quiz is build up on [react-quiz-component](https://github.com/wingkwong/react-quiz-component). To create a quizDataObject object use: [Quiz editor](https://wingkwong.github.io/react-quiz-form/).*
 
-## Benutzerdefinierte Komponenten
+## Custom Components
 
-`<CustomComponent url="storeURLvonKomponente" type="cssKlassenname"/>`
->Hier kann die Store URL direkt mirgegeben werden. Der type wird als CSS Klassenname gesetzt.
+`<CustomComponent url="storeUrlFromComponent" type="cssClassName"/>`
+>The store URL can be given directly here. The type is set as a CSS class name.
