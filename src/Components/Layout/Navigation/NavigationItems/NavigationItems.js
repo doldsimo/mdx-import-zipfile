@@ -8,7 +8,7 @@ const NavigationItems = ({ setShowMenue }) => {
     return (
         <ul className="navigation-items" onClick={() => setShowMenue(false)}>
             {configData.pages.map((page, index) => <NavigationItem exact link={"/lecture/page/" + page.name} pageIndex={index} key={index}>{index + 1 + ". " + page.name}</NavigationItem>)}
-            <NavigationItem link="/" exact exit>Lerneinheit beenden</NavigationItem>
+            <NavigationItem link="/" exact exit>End the lesson</NavigationItem>
         </ul>
     )
 }
