@@ -1,14 +1,12 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { transform, registerPlugin } from '@babel/standalone';
 import tojsx from '@babel/plugin-transform-react-jsx';
 import proposal from '@babel/plugin-proposal-object-rest-spread';
-import transformeval from 'babel-plugin-transform-eval';
 import mdx from '@mdx-js/mdx';
 import { MDXProvider, mdx as createElement } from '@mdx-js/react';
 import Wrapper from '../Wrapper/Wrapper';
 import ReactDOM from 'react-dom';
 
-// import jailed from 'jailed';
 
 import YoutubeVideo from '../Video/YoutubeVideo/YoutubeVideo';
 import { RemoteComponent } from '../RemoteComponent/RemoteComponent';
@@ -29,26 +27,16 @@ const transformJSX = code =>
 const registerBabelPlugins = () => {
     registerPlugin("reactToJSX", tojsx);
     registerPlugin("plugin-proposal-object-rest-spread", proposal);
-    // registerPlugin("plugin-transform-eval", transformeval);
 }
 
 
 const renderWithReact = async (mdxCode, setContent) => {
-
-    // var plugin = new window.jailed.DynamicPlugin('console.log("Hacked!!!"); alert("Alert Message"); setTimeout(() => {console.log("Waited For 10 Seconds")}, 10000)', api);
-    // console.log(plugin);
 
     const jsx = await mdx(mdxCode, { skipExport: true });
     // Because of buble/standalone plugins must registered not in .bablerc
     registerBabelPlugins();
     const code = transformJSX(jsx);
     const scope = { mdx: createElement }
-    // var plugin = new window.jailed.DynamicPlugin(code);
-
-    // console.log(jsx);
-    // console.log(code);
-    // console.log(typeof(code));
-
 
     const fn = new Function(
         'React',
@@ -67,9 +55,9 @@ const renderWithReact = async (mdxCode, setContent) => {
         p: props => <p {...props} />,
         Mp4Video: props => <RemoteComponent url={urlMp4Video} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="MP4 Video" /> : <Component {...props} />} />,
         Image: props => <RemoteComponent url={urlImage} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="Bild" /> : <Component {...props} />} />,
-        YoutubeVideo: props => <YoutubeVideo {...props} />, // Youtube Video in kombination mit RemoteComponent gibt CORS Fehler aus, deswegen wird bei Youtube Videos keine RemoteComponent verwendet
+        YoutubeVideo: props => <YoutubeVideo {...props} />, // Youtube video in combination with RemoteComponent gives CORS errors, therefore no RemoteComponent is used for Youtube videos
         Quiz: props => <RemoteComponent url={urlQuizComponent} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="Quiz" /> : <Component {...props} />} />,
-        CustomComponent: props => <RemoteComponent url={props.url} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="Benutzerdefiniertekomponente" /> : <Component {...props} />} />, // Beliebige Komponente bei welcher man die URL mitgiebt, sodass man angeben kann welche Komponente man aus dem "Store" benutzen möchte, der type wird als Klasse gesetzt
+        CustomComponent: props => <RemoteComponent url={props.url} fallback={<Spinner />} render={({ err, Component }) => err ? <LoadingFailed name="Benutzerdefiniertekomponente" /> : <Component {...props} />} />, // Any component for which you give the URL so that you can specify which component you want to use from the "store", the type is set as a class
         wrapper: Wrapper,
     }
 
