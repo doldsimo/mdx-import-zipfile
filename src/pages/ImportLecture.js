@@ -7,7 +7,7 @@ const ImportLecture = () => {
         <div className="import-lecture-container">
             <h1 className="center-import-lecture-text">Learning App</h1>
             <p className="center-import-lecture-text" style={{ marginBottom: "2.5px" }}>Import an MDX Zip lesson</p>
-            <p className="center-import-lecture-text" style={{ fontSize: "small", marginTop: "2.5px", marginBottom: "" }}>(Example lesson <a href="https://github.com//doldsimo/mdx-import-zipfile/blob/dev/ImportData/Mathematik%20Addition%20Subtraktion/Beispiellektion_Mathematik.zip?raw=true">Download</a>)</p>
+            <p className="center-import-lecture-text" style={{ fontSize: "small", marginTop: "2.5px", marginBottom: "" }}>(Example lesson <a href="https://github.com/doldsimo/mdx-import-zipfile/blob/dev/ImportData/MathAdditionSubtraction/MathAdditionSubtraction.zip?raw=true">Download</a>)</p>
 
             <Reader />
         </div>
