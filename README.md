@@ -13,7 +13,7 @@
 `cd ./mdx-import-zipfile`
 3. Istall all nodemodules <br>
 `npm install`
-4. Start the application
+4. Start the application <br>
 `npm start`
 
 
