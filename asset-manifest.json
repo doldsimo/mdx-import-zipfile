@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mdx-import-zipfile/static/css/main.cc09c4a1.chunk.css",
+    "main.js": "/mdx-import-zipfile/static/js/main.82bab919.chunk.js",
+    "main.js.map": "/mdx-import-zipfile/static/js/main.82bab919.chunk.js.map",
+    "runtime-main.js": "/mdx-import-zipfile/static/js/runtime-main.bc6e9b59.js",
+    "runtime-main.js.map": "/mdx-import-zipfile/static/js/runtime-main.bc6e9b59.js.map",
+    "static/js/2.b53023e5.chunk.js": "/mdx-import-zipfile/static/js/2.b53023e5.chunk.js",
+    "static/js/2.b53023e5.chunk.js.map": "/mdx-import-zipfile/static/js/2.b53023e5.chunk.js.map",
+    "index.html": "/mdx-import-zipfile/index.html",
+    "service-worker.js": "/mdx-import-zipfile/service-worker.js",
+    "service-worker.js.map": "/mdx-import-zipfile/service-worker.js.map",
+    "static/css/main.cc09c4a1.chunk.css.map": "/mdx-import-zipfile/static/css/main.cc09c4a1.chunk.css.map",
+    "static/js/2.b53023e5.chunk.js.LICENSE.txt": "/mdx-import-zipfile/static/js/2.b53023e5.chunk.js.LICENSE.txt",
+    "static/media/app.css": "/mdx-import-zipfile/static/media/roboto-v29-latin-regular.9b78ea3b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc6e9b59.js",
+    "static/js/2.b53023e5.chunk.js",
+    "static/css/main.cc09c4a1.chunk.css",
+    "static/js/main.82bab919.chunk.js"
+  ]
+}
