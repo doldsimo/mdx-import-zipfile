@@ -10,7 +10,7 @@ import { LectureProvider } from './context/LectureContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='mdx-import-zipfile'>
       <LectureProvider>
         <App />
       </LectureProvider>

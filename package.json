@@ -1,6 +1,7 @@
 {
   "name": "mdx-import-zip",
   "version": "0.1.0",
+  "homepage": "https://doldsimo.github.io/mdx-import-zipfile",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.15.5",
@@ -31,6 +32,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,6 +60,7 @@
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/preset-react": "^7.14.5",
-    "@babel/standalone": "^7.15.7"
+    "@babel/standalone": "^7.15.7",
+    "gh-pages": "^5.0.0"
   }
 }
