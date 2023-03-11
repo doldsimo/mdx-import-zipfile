@@ -19,13 +19,13 @@
 
 ## How it works
 
-After starting the application with the [online demo](https://doldsimo.github.io/mdx-import-zipfile/) or a local instance, a previously locally downloaded zip learning unit must be uploaded to the app on the start page. A sample lesson can be downloaded directly from the application home page, or found in [this](https://github.com/doldsimo/mdx-import-zipfile/ImportData) folder.
+After starting the application with the [online demo](https://doldsimo.github.io/mdx-import-zipfile/) or a local instance, a previously locally downloaded zip learning unit must be uploaded to the app on the start page. A sample lesson can be downloaded directly from the application home page, or found in [this](https://github.com/doldsimo/mdx-import-zipfile/tree/master/ImportData) folder.
 After importing the application, the lesson starts automatically.
 
 
 ### Related Links:
 
-[Sample editors output](https://github.com/doldsimo/mdx-import-zipfile/ImportData)
+[Sample editors output](https://github.com/doldsimo/mdx-import-zipfile/tree/master/ImportData)
 
 [Webpack project to create remote components](https://github.com/doldsimo/remote-component-starter)
 
