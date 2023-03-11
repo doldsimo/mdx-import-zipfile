@@ -2,7 +2,7 @@
 
 ## Get Started
 
-- [Online demo](https://lern-app-data-transfer-mdx.netlify.app/) or [Online demo](https://doldsimo.github.io/mdx-import-zipfile/)
+- [Online demo](https://doldsimo.github.io/mdx-import-zipfile/) or [demo](https://lern-app-data-transfer-mdx.netlify.app/)
 
 - For local execution: <br>
 > Nodejs must be installed to install node modules
