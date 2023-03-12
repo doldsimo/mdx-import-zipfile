@@ -8,7 +8,7 @@ For example try to import one of this zip learning units:
 - `EnglishVocabulary/EnglishVocabulary.zip`
 - `MathAdditionSubtraction/MathAdditionSubtraction.zip`
 
-Try it out in the [reading application](https://lern-app-data-transfer-mdx.netlify.app/).
+Try it out in the [reading application](https://doldsimo.github.io/mdx-import-zipfile/).
 
 
 ## How are learning units structured/built up?
